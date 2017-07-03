@@ -20,9 +20,11 @@ int main(int argc, char **argv)
 		system("CLS");
 		std::cout << "Działam.\nWciśnij CTRL+C aby zakończyć.\n";
 
+		SendMessage(Hwnd, WM_MOUSEMOVE, 0, MAKELPARAM(x, y));
+
 		while (TRUE)
 		{
-			SendMessage(Hwnd, WM_MOUSEMOVE, 0, MAKELPARAM(x, y));
+			
 			SendMessage(Hwnd, WM_LBUTTONDOWN, 0, MAKELPARAM(x, y));
 			SendMessage(Hwnd, WM_LBUTTONUP, 0, MAKELPARAM(x, y));
 			Sleep(10);
@@ -32,7 +34,7 @@ int main(int argc, char **argv)
 	{
 		std::cout << "Nie znalazłem okna!";
 	}
-	
+
 
 	return 0;
 }
